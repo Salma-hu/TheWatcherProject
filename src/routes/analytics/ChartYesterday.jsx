@@ -1,17 +1,10 @@
+
 import { useTheme } from "@/hooks/use-theme";  
 import React from 'react';
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend,
-} from 'chart.js';
+import {Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 import faker from 'faker';
+import NavButtons from "@/routes/analytics/NavButtons";
 
 ChartJS.register(
   CategoryScale,
@@ -52,26 +45,27 @@ export const data = {
 };
 
 
-const Analytics = () => {
+const ChartYesterday = () => {
     const { theme } = useTheme();
 
     return (
-        <div className="flex flex-col gap-y-4">
-            <h1 className="title">Analytics</h1>
-            <div className="flex flex-col gap-4">
-              <Line options={options} data={data} />
-            </div>
-            {/* <div className="flex flex-row gap-4">
-              <div>
-              <Line options={options} data={data} />
-              </div>
-              <div>
-              <Line options={options} data={data} />
-              </div>
-            </div> */}
-            
-        </div>
+      <div>
+      <div className="flex justify-end">
+        <NavButtons/>
+      </div>
+      <div className="flex justify-left">
+        <h1 className="title">Chart day</h1>
+      </div>
+      
+      <div className="flex flex-col gap-y-4">
+          {/* Modified chart container */}
+          <div className="flex flex-col gap-4 max-w-4xl mx-auto w-full"> 
+            <Line options={options} data={data} />
+          </div>
+      </div>
+     </div>
+
     );
 };
 
-export default Analytics;
+export default ChartYesterday;
