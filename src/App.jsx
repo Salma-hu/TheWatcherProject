@@ -4,8 +4,8 @@ import { ThemeProvider } from "@/contexts/theme-context";
 
 import Layout from "@/routes/layout";
 import HomePage from "@/routes/home/page";
-import ChartDay from "@/routes/analytics/ChartDay";
-import ChartYesterday from "@/routes/analytics/ChartYesterday";
+import HourlyChart from "@/routes/analytics/HourlyChart";
+import YesterdayChart from "@/routes/analytics/YesterdayChart";
 import ChartWeek from "@/routes/analytics/ChartWeek";
 import ScanScope from "@/routes/ScanScope";
 
@@ -20,13 +20,13 @@ function App() {
                     element: <HomePage />,
                 },
                 {
-                    path: "ChartDay",
-                    element: <ChartDay />,
+                    path: "HourlyChart",
+                    element: <HourlyChart />,
                 },
 
                 {
-                    path: "ChartYesterday",
-                    element: <ChartYesterday />,
+                    path: "YesterdayChart",
+                    element: <YesterdayChart />,
                 },
                 {
                     path: "ChartWeek",

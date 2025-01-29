@@ -15,7 +15,7 @@ export const navbarLinks = [
             {
                 label: "Analytics",
                 icon: ChartColumn,
-                path: "/ChartDay",
+                path: "/HourlyChart",
             },
         ],
     },
