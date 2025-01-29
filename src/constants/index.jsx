@@ -17,50 +17,25 @@ export const navbarLinks = [
                 icon: ChartColumn,
                 path: "/analytics",
             },
-            {
-                label: "Reports",
-                icon: NotepadText,
-                path: "/reports",
-            },
         ],
     },
     {
-        title: "Customers",
+        title: "Scanner Bot",
         links: [
             {
-                label: "Customers",
+                label: "Scan Scope",
                 icon: Users,
-                path: "/customers",
-            },
-            {
-                label: "New customer",
-                icon: UserPlus,
-                path: "/new-customer",
-            },
-            {
-                label: "Verified customers",
-                icon: UserCheck,
-                path: "/verified-customers",
+                path: "/ScanScope",
             },
         ],
     },
     {
-        title: "Products",
+        title: "Trading Bot",
         links: [
             {
                 label: "Products",
                 icon: Package,
                 path: "/products",
-            },
-            {
-                label: "New product",
-                icon: PackagePlus,
-                path: "/new-product",
-            },
-            {
-                label: "Inventory",
-                icon: ShoppingBag,
-                path: "/inventory",
             },
         ],
     },

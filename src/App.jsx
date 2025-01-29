@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/contexts/theme-context";
 import Layout from "@/routes/layout";
 import HomePage from "@/routes/home/page";
 import Analytics from "@/routes/Analytics";
+import ScanScope from "@/routes/ScanScope";
 
 function App() {
     const router = createBrowserRouter([
@@ -21,32 +22,12 @@ function App() {
                     element: <Analytics />,
                 },
                 {
-                    path: "reports",
-                    element: <h1 className="title">Reports</h1>,
-                },
-                {
-                    path: "customers",
-                    element: <h1 className="title">Customers</h1>,
-                },
-                {
-                    path: "new-customer",
-                    element: <h1 className="title">New Customer</h1>,
-                },
-                {
-                    path: "verified-customers",
-                    element: <h1 className="title">Verified Customers</h1>,
+                    path: "ScanScope",
+                    element: <ScanScope />
                 },
                 {
                     path: "products",
                     element: <h1 className="title">Products</h1>,
-                },
-                {
-                    path: "new-product",
-                    element: <h1 className="title">New Product</h1>,
-                },
-                {
-                    path: "inventory",
-                    element: <h1 className="title">Inventory</h1>,
                 },
                 {
                     path: "settings",
