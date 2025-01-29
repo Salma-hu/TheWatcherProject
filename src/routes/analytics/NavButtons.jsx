@@ -20,7 +20,7 @@ const NavButtons = () => {
                 <span className="hidden md:inline-block">Yesterday</span>
             </button>
             <button
-                onClick={() => navigate("/ChartWeek")}
+                onClick={() => navigate("/WeekChart")}
                 className="text-slate-800 hover:text-blue-600 text-sm bg-white hover:bg-slate-100 border border-slate-200 rounded-r-lg font-medium px-4 py-2 inline-flex space-x-1 items-center"
             >
                 <span className="hidden md:inline-block">Week</span>

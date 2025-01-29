@@ -23,14 +23,14 @@ export const options = {
     },
     title: {
       display: true,
-      text: 'Yesterday\'s Values (2-hour intervals)',
+      text: 'Weekly Values Chart',
     },
   },
   scales: {
     x: {
       title: {
         display: true,
-        text: 'Time Intervals',
+        text: 'Day of Week',
       },
     },
     y: {
@@ -43,37 +43,36 @@ export const options = {
   },
 };
 
-// Generate yesterday's date labels in 2-hour intervals
-const generateYesterdayLabels = () => {
-  const labels = [];
+// Generate last 7 days labels
+const generateWeekLabels = () => {
+  const days = [];
   const date = new Date();
-  date.setDate(date.getDate() - 1); // Get yesterday's date
   
-  for(let i = 0; i < 24; i += 2) {
-    const startHour = i.toString().padStart(2, '0');
-    const endHour = (i + 2).toString().padStart(2, '0');
-    labels.push(`${startHour}:00 - ${endHour}:00`);
+  for(let i = 6; i >= 0; i--) {
+    const day = new Date(date);
+    day.setDate(date.getDate() - i);
+    days.push(day.toLocaleDateString('en-US', { weekday: 'short', day: 'numeric' }));
   }
   
-  return labels;
+  return days;
 };
 
-const labels = generateYesterdayLabels();
+const labels = generateWeekLabels();
 
 export const data = {
   labels,
   datasets: [
     {
-      label: 'Yesterday\'s Values',
+      label: 'Daily Values',
       data: labels.map(() => faker.datatype.number({ min: 0, max: 100 })),
-      borderColor: 'rgb(242, 19, 197)',
-      backgroundColor: 'rgba(254, 27, 167, 0.73)',
+      borderColor: 'rgb(153, 102, 255)',
+      backgroundColor: 'rgba(153, 102, 255, 0.5)',
       tension: 0.1,
     },
   ],
 };
 
-const YesterdayChart = () => {
+const WeekChart = () => {
   const { theme } = useTheme();
 
   return (
@@ -82,7 +81,7 @@ const YesterdayChart = () => {
         <NavButtons/>
       </div>
       <div className="flex justify-left">
-        <h1 className="title">Yesterday's Data (2-hour intervals)</h1>
+        <h1 className="title">Weekly Data</h1>
       </div>
       
       <div className="flex flex-col gap-y-4">
@@ -94,4 +93,4 @@ const YesterdayChart = () => {
   );
 };
 
-export default YesterdayChart;
+export default WeekChart;
