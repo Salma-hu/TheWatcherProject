@@ -66,8 +66,8 @@ export const data = {
     {
       label: 'Yesterday\'s Values',
       data: labels.map(() => faker.datatype.number({ min: 0, max: 100 })),
-      borderColor: 'rgb(242, 19, 197)',
-      backgroundColor: 'rgba(254, 27, 167, 0.73)',
+      borderColor: 'rgb(255 99 132)',
+      backgroundColor: 'rgb(255 99 132)',
       tension: 0.1,
     },
   ],
