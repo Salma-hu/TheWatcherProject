@@ -26,7 +26,7 @@ const NavButtons = () => {
                 className={`${baseStyles} border rounded-l-lg ${
                     currentPath === "/HourlyChart" ? activeStyles : inactiveStyles
                 }`}>
-                <span className="hidden md:inline-block">To day</span>
+                <span className="hidden md:inline-block">Today</span>
             </button>
             
             <button 
