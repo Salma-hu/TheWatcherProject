@@ -11,7 +11,7 @@ const NavButtons = () => {
                 onClick={() => navigate("/HourlyChart")}
                 className="text-slate-800 hover:text-blue-600 text-sm bg-white hover:bg-slate-100 border border-slate-200 rounded-l-lg font-medium px-4 py-2 inline-flex space-x-1 items-center"
             >
-                <span className="hidden md:inline-block">Day</span>
+                <span className="hidden md:inline-block">Today</span>
             </button>
             <button
                 onClick={() => navigate("/YesterdayChart")}

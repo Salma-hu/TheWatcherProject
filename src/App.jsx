@@ -8,6 +8,7 @@ import HourlyChart from "@/routes/analytics/HourlyChart";
 import YesterdayChart from "@/routes/analytics/YesterdayChart";
 import ChartWeek from "@/routes/analytics/ChartWeek";
 import ScanScope from "@/routes/ScanScope";
+import LoginPage from "@/routes/home/LoginPage";
 
 function App() {
     const router = createBrowserRouter([
@@ -43,6 +44,10 @@ function App() {
                 {
                     path: "settings",
                     element: <h1 className="title">Settings</h1>,
+                },
+                {
+                    path: "login", 
+                    element: <LoginPage />,
                 },
             ],
         },
