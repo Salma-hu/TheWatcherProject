@@ -1,10 +1,9 @@
+import { Link } from "react-router-dom";
 import { useTheme } from "@/hooks/use-theme";
-
 import { Bell, ChevronsLeft, Moon, Search, Sun } from "lucide-react";
-
 import profileImg from "@/assets/profile-image.jpg";
-
 import PropTypes from "prop-types";
+
 
 export const Header = ({ collapsed, setCollapsed }) => {
     const { theme, setTheme } = useTheme();
@@ -33,13 +32,20 @@ export const Header = ({ collapsed, setCollapsed }) => {
                         className="hidden dark:block"
                     />
                 </button>
-                <button className="size-10 overflow-hidden rounded-full">
+                <Link  to="/login"className="size-10 overflow-hidden rounded-full">
                     <img
                         src={profileImg}
                         alt="profile image"
                         className="size-full object-cover"
                     />
-                </button>
+                </Link>
+                {/* <button className="size-10 overflow-hidden rounded-full">
+                    <img
+                        src={profileImg}
+                        alt="profile image"
+                        className="size-full object-cover"
+                    />
+                </button> */}
             </div>
         </header>
     );

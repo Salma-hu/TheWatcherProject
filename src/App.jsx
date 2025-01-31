@@ -9,6 +9,7 @@ import YesterdayChart from "@/routes/analytics/YesterdayChart";
 import WeekChart from "@/routes/analytics/WeekChart";
 import TokensPieChart from "@/routes/analytics/TokensPieChart";
 import ScanScope from "@/routes/ScanScope";
+import LoginPage from "@/routes/home/LoginPage";
 
 function App() {
     const router = createBrowserRouter([
@@ -48,6 +49,10 @@ function App() {
                 {
                     path: "settings",
                     element: <h1 className="title">Settings</h1>,
+                },
+                {
+                    path: "login", 
+                    element: <LoginPage />,
                 },
             ],
         },
