@@ -7,6 +7,7 @@ import HomePage from "@/routes/home/page";
 import HourlyChart from "@/routes/analytics/HourlyChart";
 import YesterdayChart from "@/routes/analytics/YesterdayChart";
 import WeekChart from "@/routes/analytics/WeekChart";
+import TokensPieChart from "@/routes/analytics/TokensPieChart";
 import ScanScope from "@/routes/ScanScope";
 import LoginPage from "@/routes/home/LoginPage";
 
@@ -32,6 +33,10 @@ function App() {
                 {
                     path: "WeekChart",
                     element: <WeekChart />,
+                },
+                {
+                    path: "TokensPieChart",
+                    element: <TokensPieChart />,
                 },
                 {
                     path: "ScanScope",

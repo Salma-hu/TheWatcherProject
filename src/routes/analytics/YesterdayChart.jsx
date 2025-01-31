@@ -4,6 +4,7 @@ import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement
 import { Line } from 'react-chartjs-2';
 import faker from 'faker';
 import NavButtons from "@/routes/analytics/NavButtons";
+import StatsCards from "@/routes/analytics/StatsCards";
 
 ChartJS.register(
   CategoryScale,
@@ -78,11 +79,14 @@ const YesterdayChart = () => {
 
   return (
     <div>
-      <div className="flex justify-end">
-        <NavButtons/>
-      </div>
-      <div className="flex justify-left">
-        <h1 className="title">Yesterday's Data (2-hour intervals)</h1>
+      <div className="flex justify-between items-center mb-10">
+        <h1 className="title">Yesterday's Data</h1>
+
+        <div className="flex-1 flex justify-center">
+          <StatsCards />
+        </div>
+        
+        <NavButtons />
       </div>
       
       <div className="flex flex-col gap-y-4">
