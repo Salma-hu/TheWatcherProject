@@ -49,11 +49,12 @@ const ScanScope = () => {
     return (
         <div className="flex flex-col gap-y-4">
             <h1 className="title">Scan Scope</h1>
-            <div>
+        
             
-            </div> 
+            <div id="section"> 
               <form>
-                <table class="w-[600px]">
+                {/* <table class="w-[600px]"> */}
+                <table class="w-full max-w-[600px] mx-auto">
                     <tr>
                         <div class="grid gap-6 mb-0 md:grid-cols-2">
                             <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Marcket cap(USD)</label>
@@ -63,7 +64,7 @@ const ScanScope = () => {
                         <td class="w-1/2 pr-3">
                         <div>
                             <span class="ms-3 text-xs font-normal text-gray-900 dark:text-gray-300 mr-10">From</span>
-                            <input type="number" id="marketCapFrom" class="bg-gray-50 border border-gray-300 text-gray-600 text-sm rounded-lg 
+                            <input type="number" id="" class="bg-gray-50 border border-gray-300 text-gray-600 text-sm rounded-lg 
                             focus:ring-blue-500 focus:border-blue-500 block w-full p-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 
                             dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
                         </div>
@@ -71,7 +72,7 @@ const ScanScope = () => {
                         <td class="w-1/2 pl-3">
                         <div>
                             <span class="ms-3 text-xs font-normal text-gray-900 dark:text-gray-300 mr-10">To</span>
-                            <input type="number" id="marketCapTo" class="bg-gray-50 border border-gray-300 text-gray-600 text-sm rounded-lg 
+                            <input type="number" id="" class="bg-gray-50 border border-gray-300 text-gray-600 text-sm rounded-lg 
                             focus:ring-blue-500 focus:border-blue-500 block w-full p-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 
                             dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
                         </div>
@@ -149,16 +150,22 @@ const ScanScope = () => {
                             </label>
                         </div>                   
                     </tr>
-                    <tr class="pt-10 w-full">
-                        <div class="mt-10 w-full flex gap-3">
-                            <button type="submit" class="text-white bg-[#3B82F6] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-10 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800  mr-10 ">Apply</button>  
-                            <button type="" class="text-white bg-[#3B82F6] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-10 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Reset</button>  
-                        </div> 
+                    {/* <tr class="pt-10 w-full flex justify-end"> */}
+                    {/* <tr class="pt-10 w-full">
+                        <td  colspan="100%" class="w-full">
+                            <div class="mt-10 w-full flex gap-3"> */}
+                    <tr class="pt-10">
+                        <td colspan="2" class="w-full">
+                            <div class="mt-10 w-full flex justify-end gap-3">        
+                                <button type="submit" class="text-white bg-[#3B82F6] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-10 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800  mr-10 ">Apply</button>  
+                                <button type="" class="text-white bg-[#3B82F6] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-10 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Reset</button>  
+                            </div> 
+                        </td>
                     </tr>
                 
                 </table>
                 </form>
-            
+            </div>
         </div>
     );
 };
