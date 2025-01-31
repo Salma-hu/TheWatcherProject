@@ -27,7 +27,6 @@ const NavButtons = () => {
                     currentPath === "/HourlyChart" ? activeStyles : inactiveStyles
                 }`}>
                 <span className="hidden md:inline-block">To day</span>
->>>>>>> 46cc50960e985a6a31c8c5ce59df2bdb31a36d83
             </button>
             
             <button 
