@@ -6,7 +6,7 @@ import Layout from "@/routes/layout";
 import HomePage from "@/routes/home/page";
 import HourlyChart from "@/routes/analytics/HourlyChart";
 import YesterdayChart from "@/routes/analytics/YesterdayChart";
-import ChartWeek from "@/routes/analytics/ChartWeek";
+import WeekChart from "@/routes/analytics/WeekChart";
 import ScanScope from "@/routes/ScanScope";
 import LoginPage from "@/routes/home/LoginPage";
 
@@ -30,8 +30,8 @@ function App() {
                     element: <YesterdayChart />,
                 },
                 {
-                    path: "ChartWeek",
-                    element: <ChartWeek />,
+                    path: "WeekChart",
+                    element: <WeekChart />,
                 },
                 {
                     path: "ScanScope",

@@ -11,7 +11,11 @@ const NavButtons = () => {
                 onClick={() => navigate("/HourlyChart")}
                 className="text-slate-800 hover:text-blue-600 text-sm bg-white hover:bg-slate-100 border border-slate-200 rounded-l-lg font-medium px-4 py-2 inline-flex space-x-1 items-center"
             >
+<<<<<<< HEAD
                 <span className="hidden md:inline-block">Today</span>
+=======
+                <span className="hidden md:inline-block">To day</span>
+>>>>>>> 46cc50960e985a6a31c8c5ce59df2bdb31a36d83
             </button>
             <button
                 onClick={() => navigate("/YesterdayChart")}
@@ -20,7 +24,7 @@ const NavButtons = () => {
                 <span className="hidden md:inline-block">Yesterday</span>
             </button>
             <button
-                onClick={() => navigate("/ChartWeek")}
+                onClick={() => navigate("/WeekChart")}
                 className="text-slate-800 hover:text-blue-600 text-sm bg-white hover:bg-slate-100 border border-slate-200 rounded-r-lg font-medium px-4 py-2 inline-flex space-x-1 items-center"
             >
                 <span className="hidden md:inline-block">Week</span>
