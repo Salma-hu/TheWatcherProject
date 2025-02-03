@@ -3,7 +3,7 @@ import { TrendingUp, Calendar, BarChart2 } from "lucide-react";
 
 const StatsCards = () => {
     const stats = [
-        { title: "To day", value: "254,789", icon: <TrendingUp className="w-4 h-4 text-blue-500" /> },
+        { title: "Today", value: "254,789", icon: <TrendingUp className="w-4 h-4 text-blue-500" /> },
         { title: "Yesterday", value: "2,000", icon: <Calendar className="w-4 h-4 text-green-500" /> },
         { title: "Week", value: "7,000", icon: <BarChart2 className="w-4 h-4 text-purple-500" /> }
     ];

@@ -3,8 +3,8 @@ import React from 'react';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 import faker from 'faker';
-import NavButtons from "@/routes/analytics/NavButtons";
-import StatsCards from "@/routes/analytics/StatsCards";
+import NavButtons from "@/Component/analytics/NavButtons";
+import StatsCards from "@/Component/analytics/StatsCards";
 
 ChartJS.register(
   CategoryScale,

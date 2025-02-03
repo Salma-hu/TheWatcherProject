@@ -2,14 +2,11 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import { ThemeProvider } from "@/contexts/theme-context";
 
-import Layout from "@/routes/layout";
-import HomePage from "@/routes/home/page";
-import HourlyChart from "@/routes/analytics/HourlyChart";
-import YesterdayChart from "@/routes/analytics/YesterdayChart";
-import WeekChart from "@/routes/analytics/WeekChart";
-import TokensPieChart from "@/routes/analytics/TokensPieChart";
-import ScanScope from "@/routes/ScanScope";
-import LoginPage from "@/routes/home/LoginPage";
+import Layout from "@/Component/layout";
+import HomePage from "@/Component/home/page";
+import AnalyticsOverview from "@/Component/analytics/AnalyticsOverview";
+import ScanScope from "@/Component/ScanScope";
+import LoginPage from "@/Component/home/LoginPage";
 
 function App() {
     const router = createBrowserRouter([
@@ -22,21 +19,8 @@ function App() {
                     element: <HomePage />,
                 },
                 {
-                    path: "HourlyChart",
-                    element: <HourlyChart />,
-                },
-
-                {
-                    path: "YesterdayChart",
-                    element: <YesterdayChart />,
-                },
-                {
-                    path: "WeekChart",
-                    element: <WeekChart />,
-                },
-                {
-                    path: "TokensPieChart",
-                    element: <TokensPieChart />,
+                    path: "AnalyticsOverview",
+                    element: <AnalyticsOverview />,
                 },
                 {
                     path: "ScanScope",

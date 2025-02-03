@@ -1,8 +1,6 @@
 import React from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
-import NavButtons from "@/routes/analytics/NavButtons";
-import StatsCards from "@/routes/analytics/StatsCards";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -57,12 +55,6 @@ const TokensPieChart = () => {
     <div>
         <div className="flex justify-between items-center mb-10">
           <h1 className="title">Tokens Chart</h1>
-
-          <div className="flex-1 flex justify-center">
-            <StatsCards />
-          </div>
-        
-          <NavButtons />
         </div>
         <div style={{ maxWidth: '500px', margin: '0 auto' }}>
             <Pie data={data} options={options} />
