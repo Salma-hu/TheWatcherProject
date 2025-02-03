@@ -1,10 +1,8 @@
-import { useTheme } from "@/hooks/use-theme";  
+import { useTheme } from "@/hooks/use-theme";
 import React from 'react';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 import faker from 'faker';
-import NavButtons from "@/Component/analytics/NavButtons";
-import StatsCards from "@/Component/analytics/StatsCards";
 
 ChartJS.register(
   CategoryScale,
@@ -18,6 +16,7 @@ ChartJS.register(
 
 export const options = {
   responsive: true,
+  maintainAspectRatio: false, // Important for container-based sizing
   plugins: {
     legend: {
       position: 'top',
@@ -49,7 +48,7 @@ const generateWeekLabels = () => {
   const days = [];
   const date = new Date();
   
-  for(let i = 6; i >= 0; i--) {
+  for (let i = 6; i >= 0; i--) {
     const day = new Date(date);
     day.setDate(date.getDate() - i);
     days.push(day.toLocaleDateString('en-US', { weekday: 'short', day: 'numeric' }));
@@ -66,8 +65,8 @@ export const data = {
     {
       label: 'Daily Values',
       data: labels.map(() => faker.datatype.number({ min: 0, max: 100 })),
-      borderColor: 'rgb(153, 102, 255)',
-      backgroundColor: 'rgba(153, 102, 255, 0.5)',
+      borderColor: 'rgb(54, 162, 235)',            // Blue border
+      backgroundColor: 'rgba(54, 162, 235, 0.5)',    // Blue background with transparency
       tension: 0.1,
     },
   ],
@@ -77,21 +76,10 @@ const WeekChart = () => {
   const { theme } = useTheme();
 
   return (
-    <div>
-      <div className="flex justify-between items-center mb-10">
-          <h1 className="title">Weekly Data</h1>
-  
-          <div className="flex-1 flex justify-center">
-            <StatsCards />
-          </div>
-          
-          <NavButtons />
-        </div>
-      
-      <div className="flex flex-col gap-y-4">
-        <div className="flex flex-col gap-4 max-w-4xl mx-auto w-full"> 
-          <Line options={options} data={data} />
-        </div>
+    <div className="bg-white p-4 rounded-lg shadow-md h-full w-full">
+      {/* Container with specific dimensions */}
+      <div className="w-full h-64"> {/* Adjust height here as needed */}
+        <Line options={options} data={data} />
       </div>
     </div>
   );

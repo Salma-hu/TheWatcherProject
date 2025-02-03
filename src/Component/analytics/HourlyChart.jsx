@@ -1,8 +1,17 @@
-import { useTheme } from "@/hooks/use-theme";  
-import React from 'react';
-import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
-import { Line } from 'react-chartjs-2';
-import faker from 'faker';
+import { useTheme } from "@/hooks/use-theme";
+import React from "react";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
+import { Line } from "react-chartjs-2";
+import faker from "faker";
 
 ChartJS.register(
   CategoryScale,
@@ -16,42 +25,56 @@ ChartJS.register(
 
 export const options = {
   responsive: true,
+  maintainAspectRatio: false,
   plugins: {
     legend: {
-      position: 'top',
+      position: "top",
+      labels: {
+        color: "black",
+      },
     },
     title: {
       display: true,
-      text: 'Hourly Values Chart',
+      text: "Hourly Values Chart (Today & Yesterday)",
+      color: "black",
     },
   },
   scales: {
     x: {
       title: {
         display: true,
-        text: 'Hour of Day',
+        text: "Hour of Day",
+        color: "black",
       },
     },
     y: {
       beginAtZero: true,
       title: {
         display: true,
-        text: 'Value',
+        text: "Value",
+        color: "black",
       },
     },
   },
 };
 
-const labels = Array.from({length: 24}, (_, i) => `${i}:00`);
+const labels = Array.from({ length: 24 }, (_, i) => `${i}:00`);
 
-export const data = {
+const data = {
   labels,
   datasets: [
     {
-      label: 'Hourly Values',
+      label: "Today's Values",
       data: labels.map(() => faker.datatype.number({ min: 0, max: 100 })),
-      borderColor: 'rgb(75, 192, 192)',
-      backgroundColor: 'rgba(75, 192, 192, 0.5)',
+      borderColor: "rgb(255, 0, 0)",
+      backgroundColor: "rgba(255, 0, 0, 0.5)",
+      tension: 0.1,
+    },
+    {
+      label: "Yesterday's Values",
+      data: labels.map(() => faker.datatype.number({ min: 0, max: 100 })),
+      borderColor: "rgb(0, 128, 0)",
+      backgroundColor: "rgba(0, 128, 0, 0.5)",
       tension: 0.1,
     },
   ],
@@ -61,15 +84,9 @@ const HourlyChart = () => {
   const { theme } = useTheme();
 
   return (
-    <div>
-     <div className="flex justify-between items-center mb-10">
-        <h1 className="title">Chart by Hour</h1>
-      </div>
-      
-      <div className="flex flex-col gap-y-4">
-        <div className="flex flex-col gap-4 max-w-4xl mx-auto w-full"> 
-          <Line options={options} data={data} />
-        </div>
+    <div className="bg-white p-4 rounded-lg shadow-md flex-1">
+      <div className="h-64 w-full">
+        <Line options={options} data={data} />
       </div>
     </div>
   );

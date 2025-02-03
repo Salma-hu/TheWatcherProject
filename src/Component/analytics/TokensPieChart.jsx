@@ -1,3 +1,4 @@
+import { useTheme } from "@/hooks/use-theme";
 import React from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
@@ -25,6 +26,7 @@ export const data = {
 
 export const options = {
   responsive: true,
+  maintainAspectRatio: false, // Ensures the chart fills the container
   plugins: {
     legend: {
       position: 'top',
@@ -35,7 +37,7 @@ export const options = {
     },
     tooltip: {
       callbacks: {
-        label: function(context) {
+        label: function (context) {
           let label = context.label || '';
           if (label) {
             label += ': ';
@@ -44,23 +46,23 @@ export const options = {
             label += context.raw + '%';
           }
           return label;
-        }
-      }
-    }
+        },
+      },
+    },
   },
 };
 
-const TokensPieChart = () => {
+const TokensPieChartCard = () => {
+  const { theme } = useTheme(); // Use theme if needed for dynamic styling
+
   return (
-    <div>
-        <div className="flex justify-between items-center mb-10">
-          <h1 className="title">Tokens Chart</h1>
-        </div>
-        <div style={{ maxWidth: '500px', margin: '0 auto' }}>
-            <Pie data={data} options={options} />
-        </div>
+    <div className="bg-white p-4 rounded-lg shadow-md h-full w-full">
+      {/* Chart container with fixed height */}
+      <div className="w-full h-64">
+        <Pie data={data} options={options} />
+      </div>
     </div>
   );
 };
 
-export default TokensPieChart;
+export default TokensPieChartCard;
