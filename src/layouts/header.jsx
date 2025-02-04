@@ -3,6 +3,7 @@ import { useTheme } from "@/hooks/use-theme";
 import { Bell, ChevronsLeft, Moon, Search, Sun } from "lucide-react";
 import profileImg from "@/assets/profile-image.jpg";
 import PropTypes from "prop-types";
+import UserMenu from "@/layouts/UserMenu";
 
 
 export const Header = ({ collapsed, setCollapsed }) => {
@@ -32,20 +33,16 @@ export const Header = ({ collapsed, setCollapsed }) => {
                         className="hidden dark:block"
                     />
                 </button>
-                <Link  to="/login"className="size-10 overflow-hidden rounded-full">
+                {/* <Link  to="/login"className="size-10 overflow-hidden rounded-full">
                     <img
                         src={profileImg}
                         alt="profile image"
                         className="size-full object-cover"
                     />
-                </Link>
-                {/* <button className="size-10 overflow-hidden rounded-full">
-                    <img
-                        src={profileImg}
-                        alt="profile image"
-                        className="size-full object-cover"
-                    />
-                </button> */}
+                </Link> */}
+                <div className="p-4 flex justify-end">
+                    <UserMenu />
+                </div>
             </div>
         </header>
     );
