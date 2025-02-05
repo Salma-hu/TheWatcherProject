@@ -29,13 +29,13 @@ const NavButtons = () => {
                 <span className="hidden md:inline-block">Today</span>
             </button>
             
-            {/* <button 
+            <button 
                 onClick={() => navigate("/YesterdayChart")} 
                 className={`${baseStyles} border-y border-r border-l-0 ${
                     currentPath === "/YesterdayChart" ? activeStyles : inactiveStyles
                 }`}>
                 <span className="hidden md:inline-block">Yesterday</span>
-            </button> */}
+            </button>
             
             <button 
                 onClick={() => navigate("/WeekChart")} 

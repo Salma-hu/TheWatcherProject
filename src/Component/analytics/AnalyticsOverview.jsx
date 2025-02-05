@@ -4,6 +4,8 @@ import HourlyChart from "@/Component/analytics/HourlyChart";
 import WeekChart from "@/Component/analytics/WeekChart";
 import TokensPieChart from "@/Component/analytics/TokensPieChart";
 import StatsCards from "@/Component/analytics/StatsCards";
+import AverageTimeList from "@/Component/analytics/AverageTimeList";
+import RejectionChart from "@/Component/analytics/RejectionChart";
 
 const AnalyticsOverview = () => {
   const { theme } = useTheme();
@@ -25,6 +27,16 @@ const AnalyticsOverview = () => {
         <div className="grid grid-cols-2 gap-4">
           <TokensPieChart />
           <WeekChart />
+        </div>
+
+        {/* RejectionChart (1/4) and AverageTimeList (3/4) spanning full height */}
+        <div className="grid grid-cols-4 gap-4">
+          <div className="col-span-3 flex flex-col gap-4">
+            <RejectionChart />
+          </div>
+          <div className="col-span-1 row-span-3">
+            <AverageTimeList />
+          </div>
         </div>
       </div>
     </div>
