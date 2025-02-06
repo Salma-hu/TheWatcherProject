@@ -39,7 +39,7 @@ const AverageTimeList = () => {
       <div className="max-w-xs w-full bg-white shadow rounded-lg overflow-hidden">
         {/* Added title inside the list */}
         <div className="bg-gray-200 text-gray-700 font-bold text-center py-2 text-sm">
-          KPI AverageTimeList
+          Average Time
         </div>
         {metrics.map((metric, index) => (
           <KPIListItem key={index} {...metric} />
