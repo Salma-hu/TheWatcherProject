@@ -79,16 +79,16 @@ const HourlyChart = () => {
       {
         label: "Today's Values",
         data: generateData(),
-        borderColor: "rgb(255, 0, 0)",
-        backgroundColor: "rgba(255, 0, 0, 0.5)",
-        tension: 0.1,
+        borderColor: "rgb(0, 51, 153)",  // Dark Blue
+        backgroundColor: "rgba(0, 51, 153, 0.5)",
+        tension: 0.3,
       },
       {
         label: "Yesterday's Values",
         data: generateData(),
-        borderColor: "rgb(0, 128, 0)",
-        backgroundColor: "rgba(0, 128, 0, 0.5)",
-        tension: 0.1,
+        borderColor: "rgb(102, 178, 255)", // Light Blue
+        backgroundColor: "rgba(102, 178, 255, 0.5)",
+        tension: 0.3,
       },
     ],
   };
