@@ -6,16 +6,18 @@ import TokensPieChart from "@/Component/analytics/TokensPieChart";
 import StatsCards from "@/Component/analytics/StatsCards";
 import AverageTimeList from "@/Component/analytics/AverageTimeList";
 import RejectionChart from "@/Component/analytics/RejectionChart";
+import NavButtons from "@/Component/analytics/NavButtons";
 
-const AnalyticsOverview = () => {
+const AnalyticsOverviewScanner = () => {
   const { theme } = useTheme();
 
   return (
     <div className="p-4">
       <div className="grid gap-4">
-        {/* Stats Cards */}
-        <div>
+        {/* Stats Cards and Navigation Buttons */}
+        <div className="flex justify-between items-center">
           <StatsCards />
+          <NavButtons />
         </div>
 
         {/* Hourly Chart (Full Width) */}
@@ -43,4 +45,4 @@ const AnalyticsOverview = () => {
   );
 };
 
-export default AnalyticsOverview;
+export default AnalyticsOverviewScanner;
