@@ -4,7 +4,8 @@ import { ThemeProvider } from "@/contexts/theme-context";
 
 import Layout from "@/Component/layout";
 import HomePage from "@/Component/home/page";
-import AnalyticsOverview from "@/Component/analytics/AnalyticsOverview";
+import AnalyticsOverviewScanner from "@/Component/analytics/AnalyticsOverviewScanner";
+import AnalyticsOverviewTrading from "@/Component/analytics/AnalyticsOverviewTrading";
 import ScanScope from "@/Component/ScanScope";
 import LoginPage from "@/Component/home/LoginPage";
 
@@ -19,8 +20,12 @@ function App() {
                     element: <HomePage />,
                 },
                 {
-                    path: "AnalyticsOverview",
-                    element: <AnalyticsOverview />,
+                    path: "AnalyticsOverviewScanner",
+                    element: <AnalyticsOverviewScanner />,
+                },
+                {
+                    path: "AnalyticsOverviewTrading",
+                    element: <AnalyticsOverviewTrading />,
                 },
                 {
                     path: "ScanScope",
