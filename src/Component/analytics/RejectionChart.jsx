@@ -30,12 +30,13 @@ const RejectionChart = () => {
       {
         label: "Rejection Count",
         data: dataSet.map((d) => d.count),
-        backgroundColor: "rgba(75, 192, 192, 0.6)",
-        borderColor: "rgba(75, 192, 192, 1)",
+        backgroundColor: "rgba(30, 136, 229, 0.8)", // Blue color
+        borderColor: "rgba(30, 136, 229, 1)", // Darker blue for the border
         borderWidth: 1,
       },
-    ],
+    ],  
   };
+  
 
   const commonColor = isDark ? "white" : "black";
 
