@@ -2,14 +2,22 @@ import { useTheme } from "@/hooks/use-theme";
 import React from "react";
 
 import NavButtons from "@/Component/analytics/NavButtons";
+import TradesExecutedWidget from "@/Component/analytics/TradesExecutedWidget";
 
 const AnalyticsOverviewTrading = () => {
   const { theme } = useTheme();
 
   return (
-    <div className="flex justify-between items-center">
-          <div></div>
+    <div className="p-4">
+      <div className="grid gap-4">
+        {/* Stats Cards and Navigation Buttons */}
+        <div className="flex justify-between items-center">
+          {/* Trades widget on the far left */}
+          <TradesExecutedWidget />
+          {/* Navigation buttons on the far right */}
           <NavButtons />
+        </div>
+      </div>
     </div>
   );
 };
