@@ -3,6 +3,7 @@ import React from "react";
 
 import NavButtons from "@/Component/analytics/NavButtons";
 import TradesExecutedWidget from "@/Component/analytics/TradesExecutedWidget";
+import AverageBuyPrice from "@/Component/analytics/AverageBuyPrice";
 
 const AnalyticsOverviewTrading = () => {
   const { theme } = useTheme();
@@ -16,6 +17,9 @@ const AnalyticsOverviewTrading = () => {
           <TradesExecutedWidget />
           {/* Navigation buttons on the far right */}
           <NavButtons />
+        </div>
+        <div>
+          <AverageBuyPrice />
         </div>
       </div>
     </div>
