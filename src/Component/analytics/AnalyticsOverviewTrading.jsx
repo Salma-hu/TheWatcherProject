@@ -2,14 +2,11 @@ import { useTheme } from "@/hooks/use-theme";
 import React from "react";
 
 import NavButtons from "@/Component/analytics/NavButtons";
-import TradesExecutedWidget from "@/Component/analytics/TradesExecutedWidget";
-import AverageBuyPrice from "@/Component/analytics/AverageBuyPrice";
+import TradeSummaryCard from "@/Component/analytics/TradeSummaryCard";
+import PnLChart from "@/Component/analytics/PnLChart";
 
 const AnalyticsOverviewTrading = () => {
   const { theme } = useTheme();
-
-  const tradesExecuted = 125;
-  const averageBuyPrice = 45.6789;
 
   return (
     <div className="p-4">
@@ -17,12 +14,13 @@ const AnalyticsOverviewTrading = () => {
         {/* Stats Cards and Navigation Buttons */}
         <div className="flex justify-between items-center">
           {/* Trades widget on the far left */}
-          <TradesExecutedWidget />
+          <TradeSummaryCard />
           {/* Navigation buttons on the far right */}
           <NavButtons />
         </div>
+
         <div>
-          <AverageBuyPrice />
+          <PnLChart />a
         </div>
       </div>
     </div>
