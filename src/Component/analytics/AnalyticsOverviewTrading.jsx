@@ -8,6 +8,9 @@ import AverageBuyPrice from "@/Component/analytics/AverageBuyPrice";
 const AnalyticsOverviewTrading = () => {
   const { theme } = useTheme();
 
+  const tradesExecuted = 125;
+  const averageBuyPrice = 45.6789;
+
   return (
     <div className="p-4">
       <div className="grid gap-4">
