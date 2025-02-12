@@ -1,5 +1,5 @@
 import React from "react";
-import RiskElements from "@/Component/analytics_2/RiskElements";
+import RiskElements from "@/Component/analyticsTrading/RiskElements";
 
 const RiskManagement = () => {
 

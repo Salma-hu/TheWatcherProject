@@ -1,12 +1,12 @@
 import { useTheme } from "@/hooks/use-theme";  
 import React from "react";
-import HourlyChart from "@/Component/analytics/HourlyChart";
-import WeekChart from "@/Component/analytics/WeekChart";
-import TokensPieChart from "@/Component/analytics/TokensPieChart";
-import StatsCards from "@/Component/analytics/StatsCards";
-import AverageTimeList from "@/Component/analytics/AverageTimeList";
-import RejectionChart from "@/Component/analytics/RejectionChart";
-import NavButtons from "@/Component/analytics/NavButtons";
+import HourlyChart from "@/Component/analyticsScanner/HourlyChart";
+import WeekChart from "@/Component/analyticsScanner/WeekChart";
+import TokensPieChart from "@/Component/analyticsScanner/TokensPieChart";
+import StatsCards from "@/Component/analyticsScanner/StatsCards";
+import AverageTimeList from "@/Component/analyticsScanner/AverageTimeList";
+import RejectionChart from "@/Component/analyticsScanner/RejectionChart";
+import NavButtons from "@/Component/analyticsScanner/NavButtons";
 
 const AnalyticsOverviewScanner = () => {
   const { theme } = useTheme();

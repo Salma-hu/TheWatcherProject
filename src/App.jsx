@@ -4,11 +4,11 @@ import { ThemeProvider } from "@/contexts/theme-context";
 
 import Layout from "@/Component/layout";
 import HomePage from "@/Component/home/page";
-import AnalyticsOverviewScanner from "@/Component/analytics/AnalyticsOverviewScanner";
-import AnalyticsOverviewTrading from "@/Component/analytics/AnalyticsOverviewTrading";
+import AnalyticsOverviewScanner from "@/Component/analyticsScanner/AnalyticsOverviewScanner";
+import AnalyticsOverviewTrading from "@/Component/analyticsTrading/AnalyticsOverviewTrading";
 import ScanScope from "@/Component/ScanScope";
 import LoginPage from "@/Component/home/LoginPage";
-import RiskManagement from "@/Component/analytics_2/RiskManagement";
+import RiskManagement from "@/Component/analyticsTrading/RiskManagement";
 
 function App() {
     const router = createBrowserRouter([
