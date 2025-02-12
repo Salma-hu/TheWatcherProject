@@ -8,6 +8,7 @@ import AnalyticsOverviewScanner from "@/Component/analytics/AnalyticsOverviewSca
 import AnalyticsOverviewTrading from "@/Component/analytics/AnalyticsOverviewTrading";
 import ScanScope from "@/Component/ScanScope";
 import LoginPage from "@/Component/home/LoginPage";
+import RiskManagement from "@/Component/analytics_2/RiskManagement";
 
 function App() {
     const router = createBrowserRouter([
@@ -42,6 +43,10 @@ function App() {
                 {
                     path: "login", 
                     element: <LoginPage />,
+                },
+                {
+                    path: "RiskManagement", 
+                    element: <RiskManagement />,
                 },
             ],
         },

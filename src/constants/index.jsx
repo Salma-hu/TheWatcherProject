@@ -35,7 +35,8 @@ export const navbarLinks = [
             {
                 label: "Products",
                 icon: Package,
-                path: "/products",
+                // path: "/products",
+                path: "/RiskManagement",
             },
         ],
     },
