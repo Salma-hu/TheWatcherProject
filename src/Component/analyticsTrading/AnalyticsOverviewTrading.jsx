@@ -5,6 +5,8 @@ import NavButtons from "@/Component/analyticsScanner/NavButtons";
 import TradeSummaryCard from "@/Component/analyticsTrading/TradeSummaryCard";
 import PnLChart from "@/Component/analyticsTrading/PnLChart";
 import RiskElements from "@/Component/analyticsTrading/RiskElements";
+import WinRateGauge from "@/Component/analyticsTrading/WinRateGauge";
+import FailedTransactions from "@/Component/analyticsTrading/FailedTransactions";
 
 
 const AnalyticsOverviewTrading = () => {
@@ -24,7 +26,13 @@ const AnalyticsOverviewTrading = () => {
             <div className="col-span-3 flex flex-col gap-4">
               <PnLChart />
             </div>
-          </div>
+        </div>
+        <div className="flex items-center justify-center min-h-screen bg-gray-100">
+          <WinRateGauge winRate={75} />
+        </div>
+        <div className="min-h-screen flex items-center justify-center bg-gray-100">
+          <FailedTransactions/>
+        </div>
       </div>
     </div>
   );
