@@ -128,7 +128,6 @@ const PnLChart = () => {
   };
 
   return (
-    // <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
     <div className="bg-gray-100 flex justify-center p-4">
       <div className="w-full max-w-4xl">
         {/* Chart Container */}
@@ -136,8 +135,8 @@ const PnLChart = () => {
           className="p-6 bg-white shadow-lg rounded-xl relative"
           style={{ height: "400px" }}  // Set a fixed height for the container
         >
-          {/* Buttons inside the card, aligned to the right */}
-          <div className="absolute top-4 right-4 flex space-x-2">
+          {/* Buttons inside the card, aligned to the right with a higher z-index */}
+          <div className="absolute top-4 right-4 flex space-x-2 z-10">
             {["day", "week", "month"].map(frame => (
               <button
                 key={frame}
