@@ -34,7 +34,7 @@ function App() {
                 },
                 {
                     path: "products",
-                    element: <h1 className="title">Products</h1>,
+                    element: <h1 className="title">Trading Bot</h1>,
                 },
                 {
                     path: "settings",
