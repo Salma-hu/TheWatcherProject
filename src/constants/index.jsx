@@ -33,7 +33,7 @@ export const navbarLinks = [
         title: "Trading Bot",
         links: [
             {
-                label: "Products",
+                label: "Trading Bot ",
                 icon: Package,
                 // path: "/products",
                 path: "/RiskManagement",
