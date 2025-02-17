@@ -70,10 +70,9 @@ WinRateGauge.propTypes = {
 };
 
 /**
- * WinRateGaugeCard - Container component for presenting the gauge in a card layout
- * 
  * @param {number} winRate - Percentage value between 0 and 100
  */
+
 const WinRateGaugeCard = ({ winRate }) => {
   return (
     <div className="bg-white shadow-lg rounded-lg p-6 w-fit hover:shadow-xl transition-shadow">
