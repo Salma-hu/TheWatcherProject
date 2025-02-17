@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import profileImg from "@/assets/profile-image.jpg";
+import { Link } from "react-router-dom";
 
 const languages = [
     { name: "English", flag: "🇺🇸" },
@@ -134,7 +135,7 @@ const UserMenu = () => {
                             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
                             </svg>
-                            <span className="font-medium">Sign Out</span>
+                            <Link  to="/SignUp"><span className="font-medium">Sign Out</span></Link> 
                         </li>
                     </ul>
                 </div>
