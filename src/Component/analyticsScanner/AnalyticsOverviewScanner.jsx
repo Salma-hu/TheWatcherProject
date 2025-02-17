@@ -11,10 +11,18 @@ import PnLChart from "@/Component/analyticsTrading/PnLChart";
 import RiskElements from "@/Component/analyticsTrading/RiskElements";
 import FailedTransactions from "@/Component/analyticsTrading/FailedTransactions";
 import WinRateGauge from "@/Component/analyticsTrading/WinRateGauge";
+import TopTokensLeaderboard from "@/Component/analyticsTrading/TopTokensLeaderboard";
+
 
 const AnalyticsOverviewScanner = () => {
   const { theme } = useTheme();
-
+  const tokens = [
+    { name: 'Token A', roi: 45 },
+    { name: 'Token B', roi: 38 },
+    { name: 'Token C', roi: 25 },
+    // Add more tokens as needed
+  ]; 
+  
   return (
     <div className="p-4">
       <div className="grid gap-4">
@@ -59,6 +67,9 @@ const AnalyticsOverviewScanner = () => {
         </div>
         <div className="grid grid-cols-2 gap-4">
           <FailedTransactions/>
+        </div>
+        <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+          <TopTokensLeaderboard tokens={tokens} />
         </div>
       </div>
     </div>
