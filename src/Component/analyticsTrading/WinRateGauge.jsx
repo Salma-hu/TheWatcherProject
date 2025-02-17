@@ -75,7 +75,8 @@ WinRateGauge.propTypes = {
 
 const WinRateGaugeCard = ({ winRate }) => {
   return (
-    <div className="bg-white shadow-lg rounded-lg p-6 w-fit hover:shadow-xl transition-shadow">
+    <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-sm hover:shadow-xl transition-shadow">
+    {/* // <div className="bg-white shadow-lg rounded-lg p-6 w-fit hover:shadow-xl transition-shadow"> */}
       <header className="mb-4">
         <h2 className="text-l font-semibold text-gray-800">
           {/* Trading Performance */}
