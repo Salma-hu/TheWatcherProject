@@ -46,7 +46,7 @@ const AnalyticsOverviewScanner = () => {
         </div>
         <div className="grid grid-cols-4 gap-4">
           <div className="col-span-1 row-span-3 flex flex-col h-full">
-              <div className="mb-4">
+              <div className="mb-2">
                 <RiskElements />
               </div>
               <div className="flex-none">
