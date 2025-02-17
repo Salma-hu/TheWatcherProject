@@ -35,7 +35,7 @@ const WinRateGauge = ({ winRate }) => {
         />
         
         <circle
-          stroke="#10b981"
+          stroke="#4888d9"
           fill="transparent"
           strokeWidth={stroke}
           strokeLinecap="round"
