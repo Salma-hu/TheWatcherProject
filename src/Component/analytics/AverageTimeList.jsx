@@ -5,7 +5,7 @@ const KPIListItem = ({ title, value, description, trend }) => {
   const trendIcon = trend > 0 ? '▲' : trend < 0 ? '▼' : '';
 
   return (
-    <div className="flex items-center justify-between px-2 py-1 border-b last:border-b-0 hover:bg-gray-50 transition-colors">
+    <div className="flex items-center justify-between px-2 py-3 border-b last:border-b-0 hover:bg-gray-50 transition-colors">
       <div className="flex-1">
         <p className="text-xs font-semibold text-gray-700 truncate">{title}</p>
         {description && (
@@ -26,12 +26,16 @@ const KPIListItem = ({ title, value, description, trend }) => {
 
 const AverageTimeList = () => {
   const metrics = [
-    { title: 'Avg Time to Identify', value: '200ms', description: 'Detection time', trend: -5 },
-    { title: 'Time to Validate', value: '350ms', description: 'Validation time', trend: 2 },
-    { title: 'Time to Tradable', value: '150ms', description: 'Tradable marking', trend: 0 },
-    { title: 'Tokens Identified', value: '12,345', description: 'Today’s tokens', trend: 10 },
-    { title: 'Validation Rate', value: '98%', description: 'Success rate', trend: -1 },
-    { title: 'Average Latency', value: '120ms', description: 'System latency', trend: 5 },
+    { title: 'Avg Time to Identify', value: '200ms'},
+    { title: 'Time to Validate', value: '350ms'},
+    { title: 'Time in the Trade', value: '150ms'},
+    { title: 'Avg Buy Price', value: '150'},
+    { title: 'Avg ROI ', value: '180'},
+    { title: 'Avg Liquidity Distribution', value: '156'},
+    { title: 'Avg Average Market Cap', value: '2635'},
+    // { title: 'Tokens Identified', value: '12,345', description: 'Today’s tokens', trend: 10 },
+    // { title: 'Validation Rate', value: '98%', description: 'Success rate', trend: -1 },
+    // { title: 'Average Latency', value: '120ms', description: 'System latency', trend: 5 },
   ];
 
   return (
