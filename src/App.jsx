@@ -8,15 +8,9 @@ import AnalyticsOverviewScanner from "@/Component/analytics/AnalyticsOverviewSca
 import AnalyticsOverviewTrading from "@/Component/analytics/AnalyticsOverviewTrading";
 import ScanScope from "@/Component/ScanScope";
 import LoginPage from "@/Component/home/LoginPage";
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-import RiskManagement from "@/Component/analytics_2/RiskManagement";
-=======
 // import SignUpPage from "@/Component/home/SignUpPage";
->>>>>>> Stashed changes
-=======
 // import SignUpPage from "@/Component/home/SignUpPage";
->>>>>>> Stashed changes
+
 
 function App() {
     const router = createBrowserRouter([
@@ -52,23 +46,15 @@ function App() {
                     path: "login", 
                     element: <LoginPage />,
                 },
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
+
                 {
                     path: "RiskManagement", 
                     element: <RiskManagement />,
                 },
-=======
-=======
->>>>>>> Stashed changes
                 // {
                 //     path: "SignUp", 
                 //     element: <SignUpPage />,
                 // },
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
             ],
         },
     ]);
