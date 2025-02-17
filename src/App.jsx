@@ -46,14 +46,11 @@ function App() {
                     path: "login", 
                     element: <LoginPage />,
                 },
-<<<<<<< Updated upstream
-
                 {
                     path: "RiskManagement", 
                     element: <RiskManagement />,
                 },
-=======
->>>>>>> Stashed changes
+
                 // {
                 //     path: "SignUp", 
                 //     element: <SignUpPage />,
