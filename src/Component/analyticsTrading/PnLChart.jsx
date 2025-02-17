@@ -80,21 +80,21 @@ const PnLChart = () => {
         label: "Current Period",
         data: aggregatedData.map(item => item.pnl),
         fill: false,
-        borderColor: "#003366",
-        backgroundColor: "#003366",
+        borderColor: "#6b9d9d",
+        backgroundColor: "#6b9d9d",
         tension: 0.4,
         pointRadius: 5,
-        pointBackgroundColor: "#003366",
+        pointBackgroundColor: "#6b9d9d",
       },
       {
         label: "Previous Period",
         data: previousData.map(item => item.pnl),
         fill: false,
-        borderColor: "#60A5FA",
-        backgroundColor: "#60A5FA",
+        borderColor: "#4888d9",
+        backgroundColor: "#4888d9",
         tension: 0.4,
         pointRadius: 5,
-        pointBackgroundColor: "#60A5FA",
+        pointBackgroundColor: "#4888d9  ",
       },
     ],
   };
@@ -128,16 +128,15 @@ const PnLChart = () => {
   };
 
   return (
-    // <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
-    <div className="bg-gray-100 flex justify-center p-4">
+    <div className="bg-gray-100 flex justify-center">
       <div className="w-full max-w-4xl">
         {/* Chart Container */}
         <div
           className="p-6 bg-white shadow-lg rounded-xl relative"
           style={{ height: "400px" }}  // Set a fixed height for the container
         >
-          {/* Buttons inside the card, aligned to the right */}
-          <div className="absolute top-4 right-4 flex space-x-2">
+          {/* Buttons inside the card, aligned to the right with a higher z-index */}
+          <div className="absolute top-4 right-4 flex space-x-2 z-10">
             {["day", "week", "month"].map(frame => (
               <button
                 key={frame}
