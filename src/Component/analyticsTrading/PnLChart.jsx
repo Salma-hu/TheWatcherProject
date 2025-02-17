@@ -128,7 +128,7 @@ const PnLChart = () => {
   };
 
   return (
-    <div className="bg-gray-100 flex justify-center p-4">
+    <div className="bg-gray-100 flex justify-center">
       <div className="w-full max-w-4xl">
         {/* Chart Container */}
         <div
