@@ -7,6 +7,10 @@ import StatsCards from "@/Component/analyticsScanner/StatsCards";
 import AverageTimeList from "@/Component/analyticsScanner/AverageTimeList";
 import RejectionChart from "@/Component/analyticsScanner/RejectionChart";
 import NavButtons from "@/Component/analyticsScanner/NavButtons";
+import PnLChart from "@/Component/analyticsTrading/PnLChart";
+import RiskElements from "@/Component/analyticsTrading/RiskElements";
+import FailedTransactions from "@/Component/analyticsTrading/FailedTransactions";
+import WinRateGauge from "@/Component/analyticsTrading/WinRateGauge";
 
 const AnalyticsOverviewScanner = () => {
   const { theme } = useTheme();
@@ -39,6 +43,22 @@ const AnalyticsOverviewScanner = () => {
           <div className="col-span-1 row-span-3">
             <AverageTimeList />
           </div>
+        </div>
+        <div className="grid grid-cols-4 gap-4">
+          <div className="col-span-1 row-span-3 flex flex-col h-full">
+              <div className="mb-4">
+                <RiskElements />
+              </div>
+              <div className="flex-none">
+                <WinRateGauge winRate={75} />
+              </div>
+          </div>                        
+          <div className="col-span-3 flex flex-col gap-4">
+             <PnLChart />
+          </div>
+        </div>
+        <div className="grid grid-cols-2 gap-4">
+          <FailedTransactions/>
         </div>
       </div>
     </div>
