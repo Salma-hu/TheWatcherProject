@@ -22,7 +22,7 @@ const AnalyticsOverviewScanner = () => {
     { name: 'Token C', roi: 25 },
     // Add more tokens as needed
   ]; 
-  
+
   return (
     <div className="p-4">
       <div className="grid gap-4">
