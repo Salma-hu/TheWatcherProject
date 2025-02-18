@@ -17,7 +17,8 @@ const TopTokensLeaderboard = () => (
           { name: 'Token A', roi: 125.45 },
           { name: 'Token B', roi: 98.76 },
           { name: 'Token C', roi: 87.65 },
-          { name: 'Token D', roi: 75.32 }
+          { name: 'Token D', roi: 75.32 },
+          { name: 'Token E', roi: 75.32 }
         ].map((token, index) => (
           <tr key={token.name}>
             <td className="px-4 py-2 whitespace-nowrap text-sm text-gray-500">
