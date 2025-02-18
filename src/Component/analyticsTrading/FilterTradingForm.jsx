@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const FilterForm = () => {
+const FilterTradingForm = () => {
   const [formData, setFormData] = useState({
     slippageFrom: '',
     slippageTo: '',
@@ -148,4 +148,4 @@ const FilterForm = () => {
   );
 };
 
-export default FilterForm;
+export default FilterTradingForm;
