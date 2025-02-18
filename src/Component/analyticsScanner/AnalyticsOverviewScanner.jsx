@@ -75,7 +75,7 @@ const AnalyticsOverviewScanner = () => {
           <div className="col-span-3 flex flex-col gap-4">
             <PeakTradingHoursChart />
           </div>
-          <div className="col-span-1 row-span-3">
+          <div id="nbrList" className="col-span-1 row-span-3">
             <NumbersList />
           </div>
         </div>
