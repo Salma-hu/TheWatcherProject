@@ -8,7 +8,7 @@ import AnalyticsOverviewScanner from "@/Component/analyticsScanner/AnalyticsOver
 import AnalyticsOverviewTrading from "@/Component/analyticsTrading/AnalyticsOverviewTrading";
 import ScanScope from "@/Component/ScanScope";
 import LoginPage from "@/Component/home/LoginPage";
-import RiskManagement from "@/Component/analyticsTrading/RiskManagement";
+import FilterTradingForm from "@/Component/analyticsTrading/FilterTradingForm";
 // import SignUpPage from "@/Component/home/SignUpPage";
 
 
@@ -47,9 +47,13 @@ function App() {
                     element: <LoginPage />,
                 },
                 {
-                    path: "RiskManagement", 
-                    element: <RiskManagement />,
+                    path: "FilterTradingForm", 
+                    element: <FilterTradingForm />,
                 },
+                // {
+                //     path: "RiskManagement", 
+                //     element: <RiskManagement />,
+                // },
 
                 // {
                 //     path: "SignUp", 
