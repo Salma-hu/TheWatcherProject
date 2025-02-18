@@ -14,6 +14,7 @@ import WinRateGauge from "@/Component/analyticsTrading/WinRateGauge";
 import TopTokensLeaderboard from "@/Component/analyticsTrading/TopTokensLeaderboard";
 import TradesExecutedCard from "@/Component/analyticsTrading/TradesExecutedCard";
 import NumbersList from "@/Component/analyticsScanner/NumbersList";
+import PeakTradingHoursChart from "@/Component/analyticsTrading/PeakTradingHoursChart";
 
 const AnalyticsOverviewScanner = () => {
   const { theme } = useTheme();
@@ -62,8 +63,6 @@ const AnalyticsOverviewScanner = () => {
             <PnLChart />
           </div>
         </div>
-
-        {/* Combine FailedTransactions, NumbersList, and TopTokensLeaderboard in one row */}
         <div className="grid grid-cols-2 gap-4">
           <FailedTransactions />
           <div className="flex flex-col gap-4">
@@ -71,6 +70,16 @@ const AnalyticsOverviewScanner = () => {
             <TopTokensLeaderboard  />
           </div>
         </div>
+          
+        <div className="grid grid-cols-4 gap-4">
+          <div className="col-span-3 flex flex-col gap-4">
+            <PeakTradingHoursChart />
+          </div>
+          <div className="col-span-1 row-span-3">
+            <NumbersList />
+          </div>
+        </div>
+
       </div>
     </div>
   );
