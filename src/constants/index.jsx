@@ -35,8 +35,7 @@ export const navbarLinks = [
             {
                 label: "Trading Bot ",
                 icon: Package,
-                // path: "/products",
-                path: "/RiskManagement",
+                path: "/FilterTradingForm",
             },
         ],
     },
