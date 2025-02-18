@@ -5,7 +5,7 @@ import { ThemeProvider } from "@/contexts/theme-context";
 import Layout from "@/Component/layout";
 import HomePage from "@/Component/home/page";
 import AnalyticsOverviewScanner from "@/Component/analyticsScanner/AnalyticsOverviewScanner";
-import AnalyticsOverviewTrading from "@/Component/analyticsTrading/AnalyticsOverviewTrading";
+// import AnalyticsOverviewTrading from "@/Component/analyticsTrading/AnalyticsOverviewTrading";
 import ScanScope from "@/Component/ScanScope";
 import LoginPage from "@/Component/home/LoginPage";
 import FilterTradingForm from "@/Component/analyticsTrading/FilterTradingForm";
@@ -26,10 +26,10 @@ function App() {
                     path: "AnalyticsOverviewScanner",
                     element: <AnalyticsOverviewScanner />,
                 },
-                {
-                    path: "AnalyticsOverviewTrading",
-                    element: <AnalyticsOverviewTrading />,
-                },
+                // {
+                //     path: "AnalyticsOverviewTrading",
+                //     element: <AnalyticsOverviewTrading />,
+                // },
                 {
                     path: "ScanScope",
                     element: <ScanScope />
