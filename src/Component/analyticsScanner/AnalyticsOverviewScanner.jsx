@@ -6,30 +6,25 @@ import TokensPieChart from "@/Component/analyticsScanner/TokensPieChart";
 import StatsCards from "@/Component/analyticsScanner/StatsCards";
 import AverageTimeList from "@/Component/analyticsScanner/AverageTimeList";
 import RejectionChart from "@/Component/analyticsScanner/RejectionChart";
-import NavButtons from "@/Component/analyticsScanner/NavButtons";
+// import NavButtons from "@/Component/analyticsScanner/NavButtons";
 import PnLChart from "@/Component/analyticsTrading/PnLChart";
 import RiskElements from "@/Component/analyticsTrading/RiskElements";
 import FailedTransactions from "@/Component/analyticsTrading/FailedTransactions";
 import WinRateGauge from "@/Component/analyticsTrading/WinRateGauge";
 import TopTokensLeaderboard from "@/Component/analyticsTrading/TopTokensLeaderboard";
-
+import TradesExecutedCard from "@/Component/analyticsTrading/TradesExecutedCard";
+import NumbersList from "@/Component/analyticsScanner/NumbersList";
 
 const AnalyticsOverviewScanner = () => {
   const { theme } = useTheme();
-  const tokens = [
-    { name: 'Token A', roi: 45 },
-    { name: 'Token B', roi: 38 },
-    { name: 'Token C', roi: 25 },
-    // Add more tokens as needed
-  ]; 
 
   return (
     <div className="p-4">
       <div className="grid gap-4">
-        {/* Stats Cards and Navigation Buttons */}
+        {/* Stats Cards and Trades Executed */}
         <div className="flex justify-between items-center">
           <StatsCards />
-          <NavButtons />
+          <TradesExecutedCard />
         </div>
 
         {/* Hourly Chart (Full Width) */}
@@ -43,7 +38,7 @@ const AnalyticsOverviewScanner = () => {
           <WeekChart />
         </div>
 
-        {/* RejectionChart (1/4) and AverageTimeList (3/4) spanning full height */}
+        {/* RejectionChart (3/4) and AverageTimeList (1/4) */}
         <div className="grid grid-cols-4 gap-4">
           <div className="col-span-3 flex flex-col gap-4">
             <RejectionChart />
@@ -52,24 +47,29 @@ const AnalyticsOverviewScanner = () => {
             <AverageTimeList />
           </div>
         </div>
+
+        {/* RiskElements & WinRateGauge alongside PnLChart */}
         <div className="grid grid-cols-4 gap-4">
           <div className="col-span-1 row-span-3 flex flex-col h-full">
-              <div className="mb-2">
-                <RiskElements />
-              </div>
-              <div className="flex-none">
-                <WinRateGauge winRate={75} />
-              </div>
+            <div className="mb-2">
+              <RiskElements />
+            </div>
+            <div className="flex-none">
+              <WinRateGauge winRate={75} />
+            </div>
           </div>                        
           <div className="col-span-3 flex flex-col gap-4">
-             <PnLChart />
+            <PnLChart />
           </div>
         </div>
+
+        {/* Combine FailedTransactions, NumbersList, and TopTokensLeaderboard in one row */}
         <div className="grid grid-cols-2 gap-4">
-          <FailedTransactions/>
-        </div>
-        <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-          <TopTokensLeaderboard tokens={tokens} />
+          <FailedTransactions />
+          <div className="flex flex-col gap-4">
+            {/* <NumbersList /> */}
+            <TopTokensLeaderboard  />
+          </div>
         </div>
       </div>
     </div>
