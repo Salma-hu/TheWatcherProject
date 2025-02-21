@@ -1,52 +1,58 @@
 import React from "react";
+import { useTheme } from "@/hooks/use-theme";
 
+const KPIListItem = ({ title, value, description }) => {
+  const { theme } = useTheme();
+  const isDarkMode = theme === "dark";
 
-
-const KPIListItem = ({ title, value, description, trend }) => {
-    const trendColor = trend > 0 ? 'text-green-600' : trend < 0 ? 'text-red-600' : 'text-gray-500';
-    const trendIcon = trend > 0 ? '▲' : trend < 0 ? '▼' : '';
-  
-    return (
-      <div className="flex items-center justify-between px-2 py-3 border-b last:border-b-0 hover:bg-[rgb(255,212,212)] transition-colors">
-        <div className="flex-1">
-          <p className="text-xs font-semibold text-gray-700 truncate">{title}</p>
-          {description && (
-            <p className="text-xs text-gray-400 truncate">{description}</p>
-          )}
-        </div>
-        <div className="text-right">
-          <p className="text-sm font-bold text-gray-900">{value}</p>
-          {/* {trend !== undefined && (
-            <span className={`${trendColor} text-xs`}>
-              {trendIcon} {Math.abs(trend)}%
-            </span>
-          )} */}
-        </div>
+  return (
+    <div
+      className={`flex items-center justify-between px-2 py-3 border-b last:border-b-0 transition-colors
+        ${isDarkMode ? "border-gray-700 hover:bg-gray-800" : "border-gray-200 hover:bg-red-100"}`}
+    >
+      <div className="flex-1">
+        <p className={`text-xs font-semibold truncate ${isDarkMode ? "text-gray-300" : "text-gray-700"}`}>
+          {title}
+        </p>
+        {description && (
+          <p className={`text-xs truncate ${isDarkMode ? "text-gray-500" : "text-gray-400"}`}>
+            {description}
+          </p>
+        )}
       </div>
-    );
-  };
-  
-  const RiskElements = () => {
-    const metrics = [
-      { title: 'Avg Slippage Impact Tracker', value: '45%', description: 'Slippage percentage' },
-      { title: 'Avg Liquidity Depth Monitor', value: '32%', description: 'Available liquidity'},
-      { title: 'Liquidity Lock Validator', value: '121', description: 'Tracks failed liquidity locks'},
-    //   { title: 'Tokens Identified', value: '12,345', description: 'Today’s tokens', trend: 10 },
-    ];
-  
-    return (
-      // <div className="min-h-screen bg-gray-100 flex flex-col items-center py-6">
-        <div className="max-w-xs w-full bg-white shadow rounded-lg overflow-hidden">
-          {/* Added title inside the list */}
-          <div className="bg-[rgb(252,157,157)] text-gray-700 font-bold text-center py-2 text-sm">
-            Risk Elements
-          </div>
-          {metrics.map((metric, index) => (
-            <KPIListItem key={index} {...metric} />
-          ))}
-        </div>
-    
-    );
-  };
-  
-  export default RiskElements;
+      <div className="text-right">
+        <p className={`text-sm font-bold ${isDarkMode ? "text-gray-100" : "text-gray-900"}`}>{value}</p>
+      </div>
+    </div>
+  );
+};
+
+const RiskElements = () => {
+  const { theme } = useTheme();
+  const isDarkMode = theme === "dark";
+
+  const metrics = [
+    { title: "Avg Slippage Impact Tracker", value: "45%", description: "Slippage percentage" },
+    { title: "Avg Liquidity Depth Monitor", value: "32%", description: "Available liquidity" },
+    { title: "Liquidity Lock Validator", value: "121", description: "Tracks failed liquidity locks" },
+  ];
+
+  return (
+    <div
+      className={`max-w-xs w-full shadow rounded-lg overflow-hidden
+        ${isDarkMode ? "bg-gray-900 text-gray-300" : "bg-white text-gray-700"}`}
+    >
+      <div
+        className={`font-bold text-center py-2 text-sm
+          ${isDarkMode ? "bg-gray-800 text-gray-300" : "bg-red-300 text-gray-700"}`}
+      >
+        Risk Elements
+      </div>
+      {metrics.map((metric, index) => (
+        <KPIListItem key={index} {...metric} />
+      ))}
+    </div>
+  );
+};
+
+export default RiskElements;
