@@ -1,20 +1,23 @@
-import { useRef, useEffect } from 'react'; 
+import { useRef, useEffect } from 'react';
+import { useTheme } from '@/hooks/use-theme';
 import Chart from 'chart.js/auto';
 import { CategoryScale } from 'chart.js';
 Chart.register(CategoryScale);
 
 const PeakTradingHoursChart = () => {
+  const { theme } = useTheme();
+  const isDarkMode = theme === 'dark';
   const chartRef = useRef(null);
 
   useEffect(() => {
     const ctx = chartRef.current.getContext('2d');
-    
+
     // Create labels for each hour (0:00 to 23:00)
     const labels = Array.from({ length: 24 }, (_, i) => `${i}:00`);
 
     // Sample data (replace with your actual data)
     const tradingData = {
-      labels: labels,
+      labels,
       datasets: [{
         label: 'Profitability Index',
         data: Array.from({ length: 24 }, () => Math.floor(Math.random() * 100)),
@@ -36,7 +39,11 @@ const PeakTradingHoursChart = () => {
           x: {
             title: {
               display: true,
-              text: 'Time of Day (24h)'
+              text: 'Time of Day (24h)',
+              color: isDarkMode ? 'white' : 'black'
+            },
+            ticks: {
+              color: isDarkMode ? 'white' : 'black'
             },
             grid: {
               display: false
@@ -45,7 +52,11 @@ const PeakTradingHoursChart = () => {
           y: {
             title: {
               display: true,
-              text: 'Profitability'
+              text: 'Profitability',
+              color: isDarkMode ? 'white' : 'black'
+            },
+            ticks: {
+              color: isDarkMode ? 'white' : 'black'
             },
             beginAtZero: true
           }
@@ -53,21 +64,25 @@ const PeakTradingHoursChart = () => {
         plugins: {
           legend: {
             position: 'top',
+            labels: {
+              color: isDarkMode ? 'white' : 'black'
+            },
           },
           title: {
             display: true,
-            text: 'Peak Trading Hours Analysis'
+            text: 'Peak Trading Hours Analysis',
+            color: isDarkMode ? 'white' : 'black'
           }
         }
       }
     });
 
-    // Cleanup the chart on unmount
+    // Cleanup the chart on unmount or when theme changes
     return () => chart.destroy();
-  }, []);
+  }, [isDarkMode]);
 
   return (
-    <div className="w-full max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md">
+    <div className={`w-full max-w-4xl mx-auto p-6 ${isDarkMode ? 'bg-gray-900' : 'bg-white'} rounded-lg shadow-md`}>
       <div className="relative h-96">
         <canvas ref={chartRef}></canvas>
       </div>
