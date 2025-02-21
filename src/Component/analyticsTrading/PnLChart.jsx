@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTheme } from "@/hooks/use-theme";
 import { Line } from "react-chartjs-2";
 import {
   Chart as ChartJS,
@@ -23,6 +24,8 @@ ChartJS.register(
 );
 
 const PnLChart = () => {
+  const { theme } = useTheme();
+  const isDarkMode = theme === "dark";
   const [timeframe, setTimeframe] = useState("day");
 
   // Example P&L trades data
@@ -94,15 +97,15 @@ const PnLChart = () => {
         backgroundColor: "#4888d9",
         tension: 0.4,
         pointRadius: 5,
-        pointBackgroundColor: "#4888d9  ",
+        pointBackgroundColor: "#4888d9",
       },
     ],
   };
 
-  // Chart options - updated to allow resizing like an image
+  // Chart options adjusted for dark/light mode
   const options = {
     responsive: true,
-    maintainAspectRatio: false, // Disable the default aspect ratio
+    maintainAspectRatio: false,
     plugins: {
       legend: {
         position: "top",
@@ -110,32 +113,50 @@ const PnLChart = () => {
           usePointStyle: true,
           boxWidth: 20,
           font: { size: 14, weight: "bold" },
+          color: isDarkMode ? "white" : "black",
         },
       },
-      title: { display: true, text: "Profit & Loss Trend", font: { size: 16 } },
+      title: {
+        display: true,
+        text: "Profit & Loss Trend",
+        font: { size: 16 },
+        color: isDarkMode ? "white" : "black",
+      },
       tooltip: { mode: "index", intersect: false },
     },
     scales: {
       x: {
-        title: { display: true, text: "Date / Period", font: { size: 14 } },
+        title: {
+          display: true,
+          text: "Date / Period",
+          font: { size: 14 },
+          color: isDarkMode ? "white" : "black",
+        },
         grid: { display: false },
+        ticks: { color: isDarkMode ? "white" : "black" },
       },
       y: {
-        title: { display: true, text: "Profit / Loss ($)", font: { size: 14 } },
-        grid: { color: "#ddd" },
+        title: {
+          display: true,
+          text: "Profit / Loss ($)",
+          font: { size: 14 },
+          color: isDarkMode ? "white" : "black",
+        },
+        grid: { color: isDarkMode ? "#444" : "#ddd" },
+        ticks: { color: isDarkMode ? "white" : "black" },
       },
     },
   };
 
   return (
-    <div className="bg-gray-100 flex justify-center">
+    <div className={`flex justify-center ${isDarkMode ? "bg-gray-900" : "bg-gray-100"}`}>
       <div className="w-full max-w-4xl">
         {/* Chart Container */}
         <div
-          className="p-6 bg-white shadow-lg rounded-xl relative"
-          style={{ height: "400px" }}  // Set a fixed height for the container
+          className={`p-6 shadow-lg rounded-xl relative ${isDarkMode ? "bg-gray-800" : "bg-white"}`}
+          style={{ height: "400px" }}
         >
-          {/* Buttons inside the card, aligned to the right with a higher z-index */}
+          {/* Timeframe selection buttons */}
           <div className="absolute top-4 right-4 flex space-x-2 z-10">
             {["day", "week", "month"].map(frame => (
               <button
@@ -151,8 +172,7 @@ const PnLChart = () => {
               </button>
             ))}
           </div>
-
-          {/* Chart Component wrapped in a container that fills its parent */}
+          {/* Chart Component */}
           <div style={{ position: "relative", height: "100%" }}>
             <Line data={chartData} options={options} />
           </div>
